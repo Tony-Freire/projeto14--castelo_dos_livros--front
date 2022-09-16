@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { postLogin } from "../../Services/Services";
 
 
 export default function Login(){
@@ -13,6 +14,9 @@ export default function Login(){
     function sendForm(e){
         e.preventDefault()
         console.log(formLog)
+        postLogin(formLog).then((res)=>{
+            console.log(res.data)
+        })
     }
 
     return(
