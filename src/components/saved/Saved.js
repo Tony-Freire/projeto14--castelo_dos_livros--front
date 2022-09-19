@@ -1,28 +1,27 @@
-import axios from "axios";
-import { useEffect,useState } from "react";
-import styled from "styled-components";
-import Book from "../book/Book";
-import data from "../data/data";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+import data from "../data/data";
 
 
 
-export default function HomePage()
+export default function Saved()
 {  
     
       return(
           <>
-          <Header><a href="/">Castelo<br/> dos<br/> livros</a></Header>
           <Container>
-              <h1>O que você deseja ler hoje?</h1>
+              <h1>Saved</h1>
            <Posters>
             {
               data.books.map(book =>(
               <Hlink to={`book/${book.slug}`}>
               <Card>
                 <img src={book.image} alt={book.name}></img>
+                <Descrption>
                 <h3>{book.name}</h3>
-                <p>R$ {book.price}</p>
+                <h5>{book.author}</h5>
+                <p>{book.description}</p>
+                </Descrption>
               </Card>
               </Hlink>))
             }
@@ -31,29 +30,11 @@ export default function HomePage()
           </>
       )
 }
-const Header=styled.header`
-background-color: #F46C6C;
-padding: 3rem;
-justify-content: center;
-align-items: center;
-text-align: center;
-a {
-  color: white;
-  text-align:left;
-  font-style: normal;
-  font-family: 'Lexend Deca', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 48px;
-  line-height: 45px;
-  text-decoration: none;
-}
-`
 
 const Container = styled.div`
-margin: 70px 30px;
+margin: 40px 30px;
 
-justify-content: center;margin: 70px 30px;
+justify-content: center;margin: 40px 30px;
 
   justify-content: center;
   align-items: center;
@@ -85,10 +66,12 @@ flex-wrap: wrap;
 justify-content: space-between;
 `
 const Card = styled.div`
-width: 135px;
-height: 255px;
+width: 300px;
+height: 200px;
 padding: 6px;
 margin: 6px;
+display:flex;
+
 align-items: center;
 background-color: white;
 justify-content: center;
@@ -98,7 +81,7 @@ border-radius: 23px;
 font-family: 'Lexend Deca', sans-serif;
 font-style: normal;
 font-weight: 700;
-font-size: 10px;
+font-size: 15px;
 line-height: 14px;
 text-align: center;
 text-decoration: none;
@@ -107,11 +90,18 @@ h3
   
   color: #F46C6C;
   text-decoration: none;
+  margin-bottom: 5px;
+}
+
+h5 {
+    color: #F46C6C;
+    font-weight:400;
 }
 p {
   
   color: #787878;
   font-size: 10px;
+  font-weight: 400;
 }
 
 img
@@ -125,4 +115,9 @@ height: 168px;
 const Hlink = styled(Link)`
   text-decoration-line: none;
 
+`
+
+const Descrption = styled.div`
+    width:100%;
+    margin-left:5px;
 `

@@ -4,6 +4,8 @@ import HomePage from "./homePage/HomePage";
 import BookInfo from "./bookInfo/BookInfo.js";
 import Login from "./login/Login.js";
 import Sign from "./sign/Sign.js";
+import Saved from "./saved/Saved.js";
+
 
 export default function App()
 {
@@ -14,8 +16,9 @@ export default function App()
         <Routes>
         <Route path="/" element={<HomePage />}/>
         <Route path="/book/:slug" element={<BookInfo />}/>
+        <Route path="/Saved" element={<Saved />}/>
         <Route path="/login" element={<Login />}/>
-          <Route path="/sign" element={<Sign />}/>
+        <Route path="/sign" element={<Sign />}/>
         </Routes>
         </BrowserRouter>
         </>
