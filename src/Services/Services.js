@@ -13,9 +13,14 @@ function authetication(){
     return config
 }
 
+function postSign(sigForm){
+    const promisse = axios.post(`${BASE_URL}/sign`, sigForm)
+    return promisse;
+}
+
 function postLogin(logForm){
     const promisse = axios.post(`${BASE_URL}/sign-up`, logForm)
     return promisse;
 }
 
-export { postLogin }
+export { postLogin, postSign }
