@@ -19,7 +19,7 @@ const data = {
         image:'https://lojasaraiva.vteximg.com.br/arquivos/ids/31727756/tolkien.jpg?v=637357755800500000',
         price:'9,90',
         counterStock:'10',
-        author:'Edgar',
+        author:'Autor Hobbit',
         numReviews: '10',
         description: 'Aventuras de Bilbo na Tera-Média.'
   
